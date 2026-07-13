@@ -4,19 +4,17 @@
  *  For example, an input of 3956 should return 6593.
  *
  */
-
 public class ReverseNumbers {
     public int numberToReverse;
 
-    public ReverseNumbers(int num) {
-        this.numberToReverse = num;
-    }
+//    public ReverseNumbers(int num) {
+//        this.numberToReverse = num;
+//    }
 
     /**
      * @param num is the number we are reversing.
      * @return is the result of our reverse function.
      */
-
     private static int reverseNumber(int num) {
         int ourNum = num;
         int result = 0;
@@ -32,6 +30,8 @@ public class ReverseNumbers {
 
     public static void main(String[] args) {
         int ourNum = 3956;
+        int ndNum = -3956;
         System.out.println(reverseNumber(ourNum));
+        System.out.println(reverseNumber(ndNum));
     }
 }
