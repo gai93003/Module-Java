@@ -6,14 +6,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Unit test suite for verifying the behavior of {@link Calculator}.
+ *
+ * @see Calculator
+ */
 public class CalculatorTest {
     private Calculator calculator;
 
+    /**
+     * Initializes a fresh instance of {@link Calculator} before each test runs.
+     */
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
     }
 
+    /**
+     * Tests {@link Calculator#add(int int)} with positive and negative integers.
+     */
     @Test
     void testAdd() {
         assertEquals(4, calculator.add(2, 2));
@@ -36,6 +47,10 @@ public class CalculatorTest {
         assertEquals(-2, calculator.divide(6, -3));
     }
 
+    /**
+     * Verifies that {@link Calculator#divide(int, int)} throws an
+     * {@link IllegalAccessException} when attempting to divide by zero.
+     */
     @Test
     void testDivideByZero() {
         IllegalArgumentException exception = assertThrows(
@@ -56,6 +71,10 @@ public class CalculatorTest {
         assertEquals(5.0, calculator.squareRoot(25), 0.0001);
     }
 
+    /**
+     * Verifies that {@link Calculator#squareRoot(int) throws an} throws
+     * {@link IllegalArgumentException} when a passed a negative integer.
+     */
     @Test
     void testSquareRootNegativeThrows() {
         assertThrows(
